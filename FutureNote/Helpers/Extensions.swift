@@ -32,8 +32,8 @@ extension Color {
             return Color("Yellow")
         }
         
-        static var Brown: Color {
-            return Color("Brown")
+        static var TitleGreen: Color {
+            return Color("Title")
         }
     }
 }

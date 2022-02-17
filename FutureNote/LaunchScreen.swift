@@ -21,9 +21,10 @@ struct LaunchScreen: View {
                 ZStack {
                     VStack(spacing: 30) {
                         
-                        Text("까아앙")
+                        Text("퓨쳐\n노트")
                             .font(.custom("tway_air", size: 80))
-                            .foregroundColor(Color.Palette.Brown)
+                            .foregroundColor(Color.Palette.TitleGreen)
+                            .animation(.linear)
                     }
                     
                     EmitterView()
@@ -31,11 +32,11 @@ struct LaunchScreen: View {
                         .opacity(light ? 1 : 0)
                         .ignoresSafeArea()
                 }
-                .background(Color.gray.opacity(0.8))
+                .background(Color.gray.opacity(0.3))
             }
         }
         .onAppear {
-            withAnimation(.linear(duration: 0.7).delay(1.2)) {
+            withAnimation(.linear(duration: 1).delay(1.2)) { // 0.7
                 showContentView = true
             }
         }
@@ -110,7 +111,7 @@ struct EmitterView: UIViewRepresentable {
     }
     
     func getColor() -> UIColor {
-        let colors : [UIColor] = [UIColor.init(rgb: 0xfdfbbe), UIColor.init(rgb: 0xfde7d9), UIColor.init(rgb: 0xfde5a5), UIColor.init(rgb: 0xe5f47f), UIColor.init(rgb: 0xd2eefa), UIColor.init(rgb: 0xdad2df)]
+        let colors : [UIColor] = [UIColor.init(rgb: 0xf2f5ed), UIColor.init(rgb: 0xc0d689), UIColor.init(rgb: 0x98c728), UIColor.init(rgb: 0x45b17b), UIColor.init(rgb: 0x17dbc2), UIColor.init(rgb: 0xdad2df)]
         
         return colors.randomElement()!
     }
