@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("currentPage") var currentPage = 1
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        MainView()
     }
 }
 

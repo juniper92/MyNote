@@ -11,6 +11,12 @@
 		07239F9527BCF8DD0080AFE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07239F9427BCF8DD0080AFE3 /* ContentView.swift */; };
 		07239F9727BCF8DD0080AFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07239F9627BCF8DD0080AFE3 /* Assets.xcassets */; };
 		07239F9A27BCF8DD0080AFE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07239F9927BCF8DD0080AFE3 /* Preview Assets.xcassets */; };
+		076524D727BDCC130069B7DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D627BDCC130069B7DD /* Extensions.swift */; };
+		076524D927BDDF8A0069B7DD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D827BDDF8A0069B7DD /* MainView.swift */; };
+		076524DC27BDE3C60069B7DD /* WishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DB27BDE3C60069B7DD /* WishView.swift */; };
+		076524DE27BDE3CB0069B7DD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DD27BDE3CB0069B7DD /* ListView.swift */; };
+		076524E027BDE84F0069B7DD /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DF27BDE84F0069B7DD /* LaunchScreen.swift */; };
+		076524E327BE2E4C0069B7DD /* tway_air.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076524E227BE2E4C0069B7DD /* tway_air.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		07239F9427BCF8DD0080AFE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07239F9627BCF8DD0080AFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07239F9927BCF8DD0080AFE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		076524D627BDCC130069B7DD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		076524D827BDDF8A0069B7DD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		076524DB27BDE3C60069B7DD /* WishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishView.swift; sourceTree = "<group>"; };
+		076524DD27BDE3CB0069B7DD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		076524DF27BDE84F0069B7DD /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		076524E227BE2E4C0069B7DD /* tway_air.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tway_air.ttf; sourceTree = "<group>"; };
+		076524E427BE2E6C0069B7DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,14 @@
 		07239F9127BCF8DD0080AFE3 /* FutureNote */ = {
 			isa = PBXGroup;
 			children = (
+				076524E427BE2E6C0069B7DD /* Info.plist */,
+				076524E127BE2CED0069B7DD /* Fonts */,
+				076524D527BDCC050069B7DD /* Helpers */,
 				07239F9227BCF8DD0080AFE3 /* FutureNoteApp.swift */,
 				07239F9427BCF8DD0080AFE3 /* ContentView.swift */,
+				076524DF27BDE84F0069B7DD /* LaunchScreen.swift */,
+				076524D827BDDF8A0069B7DD /* MainView.swift */,
+				076524DA27BDE3B90069B7DD /* TabViews */,
 				07239F9627BCF8DD0080AFE3 /* Assets.xcassets */,
 				07239F9827BCF8DD0080AFE3 /* Preview Content */,
 			);
@@ -65,6 +84,31 @@
 				07239F9927BCF8DD0080AFE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		076524D527BDCC050069B7DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				076524D627BDCC130069B7DD /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		076524DA27BDE3B90069B7DD /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				076524DB27BDE3C60069B7DD /* WishView.swift */,
+				076524DD27BDE3CB0069B7DD /* ListView.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		076524E127BE2CED0069B7DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				076524E227BE2E4C0069B7DD /* tway_air.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07239F9A27BCF8DD0080AFE3 /* Preview Assets.xcassets in Resources */,
+				076524E327BE2E4C0069B7DD /* tway_air.ttf in Resources */,
 				07239F9727BCF8DD0080AFE3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076524E027BDE84F0069B7DD /* LaunchScreen.swift in Sources */,
+				076524DC27BDE3C60069B7DD /* WishView.swift in Sources */,
 				07239F9527BCF8DD0080AFE3 /* ContentView.swift in Sources */,
+				076524DE27BDE3CB0069B7DD /* ListView.swift in Sources */,
+				076524D927BDDF8A0069B7DD /* MainView.swift in Sources */,
+				076524D727BDCC130069B7DD /* Extensions.swift in Sources */,
 				07239F9327BCF8DD0080AFE3 /* FutureNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +322,8 @@
 				DEVELOPMENT_TEAM = 5P89546L9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FutureNote/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "오늘도 껑충";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +353,8 @@
 				DEVELOPMENT_TEAM = 5P89546L9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FutureNote/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "오늘도 껑충";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
