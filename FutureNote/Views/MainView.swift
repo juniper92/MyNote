@@ -51,16 +51,15 @@ struct MainView: View {
                         } label: {
                             Image(tab.rawValue)
                                 .resizable()
-                                .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 32, height: 32)
+                                .frame(width: 33, height: 33)
                         }
                         .padding(5)
-                        .background(currentTab == tab ? Color.gray.opacity(0.2).cornerRadius(12) : nil)
+                        .background(currentTab == tab ? Color.gray.opacity(0.3).cornerRadius(12) : nil)
                         .frame(maxWidth: .infinity)
                     }
                 }
-                .padding(.top, 8)
+                .padding(8)
                 .background(Color.gray.opacity(0.3))
             }
         }
