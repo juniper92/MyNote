@@ -24,7 +24,6 @@ struct LaunchScreen: View {
                         Text("퓨쳐\n노트")
                             .font(.custom("tway_air", size: 80))
                             .foregroundColor(Color.Palette.TitleGreen)
-                            .animation(.linear)
                     }
                     
                     EmitterView()
