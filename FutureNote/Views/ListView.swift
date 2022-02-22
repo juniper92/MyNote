@@ -16,7 +16,7 @@ struct ListView: View {
     ]
     
     var body: some View {
-        ZStack {
+        ZStack() {
             Color.Palette.Blue
                 .opacity(0.2)
                 .ignoresSafeArea(edges: .bottom)
@@ -27,35 +27,45 @@ struct ListView: View {
                         .listRowBackground(Color.Palette.Blue.opacity(0.2))
                 }
                 
+                Button {
+                    
+                } label: {
+                    PlusButton()
+                }
             }
+            // 커스텀 네비바
             .safeAreaInset(edge: .top) {
-                
                 VStack(alignment: .leading, spacing: 8) {
-                    HStack() {
+                    
+                    HStack {
                         Text("✍🏻 오늘 할 일")
                             .font(.custom("tway_air", size: 27))
+                        
                         Spacer()
+                        
                         Button {
                             
                         } label: {
                             Image(systemName: "circle.grid.2x1.fill")
-                                .font(.headline)
+                                .font(.system(size: 21))
                         }
                     }
+                    
                     Text("입력한 리스트는 자정이 지나면 사라져요.\n오늘 하루가 지나기 전에 목표한 일들을 마무리해봐요!")
                         .font(.caption)
+                    
                 }
                 .padding()
                 .background(
                     LinearGradient(colors: [Color.Palette.Green.opacity(0.3), Color.Palette.TitleGreen.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
-                        .overlay(.ultraThinMaterial)
-                )
+                        .overlay(.ultraThinMaterial))
             }
             // 필수!
             .navigationBarHidden(true)
             .tint(Color.Palette.TitleGreen)
-        }
             
+        }
+        
     }
 }
 
@@ -64,5 +74,19 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+    }
+}
+
+
+@ViewBuilder
+func PlusButton() -> some View {
+    HStack {
+        Spacer()
+        
+        Image(systemName: "plus")
+            .font(.largeTitle.weight(.semibold))
+            .foregroundColor(Color.Palette.TitleGreen)
+        
+        Spacer()
     }
 }

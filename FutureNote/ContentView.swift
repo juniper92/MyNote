@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("currentPage") var currentPage = 1
-    
+//    @AppStorage("currentPage") var currentPage = 1
     var body: some View {
         MainView()
     }
