@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @State var items: [String] = [
         "첫번째 리스트",
         "두번째 리스트",
@@ -30,7 +31,7 @@ struct ListView: View {
                 Button {
                     
                 } label: {
-                    PlusButton()
+                    PlusButton(colorScheme: colorScheme)
                 }
             }
             // 커스텀 네비바
@@ -62,7 +63,7 @@ struct ListView: View {
             }
             // 필수!
             .navigationBarHidden(true)
-            .tint(Color.Palette.TitleGreen)
+            .tint(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
             
         }
         
@@ -79,13 +80,13 @@ struct ListView_Previews: PreviewProvider {
 
 
 @ViewBuilder
-func PlusButton() -> some View {
+func PlusButton(colorScheme : ColorScheme) -> some View {
     HStack {
         Spacer()
         
         Image(systemName: "plus")
             .font(.largeTitle.weight(.semibold))
-            .foregroundColor(Color.Palette.TitleGreen)
+            .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
         
         Spacer()
     }

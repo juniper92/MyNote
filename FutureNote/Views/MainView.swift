@@ -8,12 +8,13 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable {
-    case Card = "shootingstar"
+    case Card = "moon1"
     case Notes = "memo"
 }
 
 struct MainView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @State var currentTab: Tab = .Card
     
     // 디폴트탭바 숨겨!!!
@@ -55,20 +56,27 @@ struct MainView: View {
                                 .frame(width: 33, height: 33)
                         }
                         .padding(5)
-                        .background(currentTab == tab ? Color.white.opacity(0.3).cornerRadius(12) : nil)
+                        .background(currentTab == tab ? ChangeBackgroundColor().cornerRadius(12) : nil)
                         .frame(maxWidth: .infinity)
                     }
                 }
                 .padding(8)
-                .background(Color.Palette.TitleGreen.opacity(0.3))
+                .background(Color.Palette.Green.opacity(0.3))
             }
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    func ChangeBackgroundColor() -> Color {
+        colorScheme == .dark ? Color.white.opacity(0.4) : Color.Palette.Green.opacity(0.6)
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
+        MainView()
+            .preferredColorScheme(.dark)
+        
         MainView()
     }
 }

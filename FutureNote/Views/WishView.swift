@@ -15,6 +15,8 @@ struct WishView: View {
 
 struct WishView_Previews: PreviewProvider {
     static var previews: some View {
-        WishView()
+        NavigationView {
+            WishView()
+        }
     }
 }

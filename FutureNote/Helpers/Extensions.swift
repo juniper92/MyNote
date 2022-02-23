@@ -20,8 +20,8 @@ extension Color {
             return Color("Green")
         }
         
-        static var Orange: Color {
-            return Color("Orange")
+        static var LightGreen: Color {
+            return Color("LightGreen")
         }
         
         static var Pink: Color {
