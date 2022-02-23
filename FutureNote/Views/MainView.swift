@@ -61,14 +61,14 @@ struct MainView: View {
                     }
                 }
                 .padding(8)
-                .background(Color.Palette.Green.opacity(0.3))
+                .background(Color.Palette.Mint.opacity(0.3).ignoresSafeArea(edges: .bottom))
             }
         }
         .frame(maxWidth: .infinity)
     }
     
     func ChangeBackgroundColor() -> Color {
-        colorScheme == .dark ? Color.white.opacity(0.4) : Color.Palette.Green.opacity(0.6)
+        colorScheme == .dark ? Color.white.opacity(0.4) : Color.Palette.Mint.opacity(0.6)
     }
 }
 

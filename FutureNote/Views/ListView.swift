@@ -47,8 +47,9 @@ struct ListView: View {
                         Button {
                             
                         } label: {
-                            Image(systemName: "circle.grid.2x1.fill")
-                                .font(.system(size: 21))
+//                            Image(systemName: "circle.grid.2x1.fill")
+                            Text("편집")
+                                .font(.callout)
                         }
                     }
                     
@@ -58,7 +59,7 @@ struct ListView: View {
                 }
                 .padding()
                 .background(
-                    LinearGradient(colors: [Color.Palette.Green.opacity(0.3), Color.Palette.TitleGreen.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    LinearGradient(colors: [Color.Palette.Mint.opacity(0.3), Color.Palette.TitleGreen.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .overlay(.ultraThinMaterial))
             }
             // 필수!
