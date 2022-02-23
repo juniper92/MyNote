@@ -55,12 +55,12 @@ struct MainView: View {
                                 .frame(width: 33, height: 33)
                         }
                         .padding(5)
-                        .background(currentTab == tab ? Color.gray.opacity(0.3).cornerRadius(12) : nil)
+                        .background(currentTab == tab ? Color.white.opacity(0.3).cornerRadius(12) : nil)
                         .frame(maxWidth: .infinity)
                     }
                 }
                 .padding(8)
-                .background(Color.gray.opacity(0.3))
+                .background(Color.Palette.TitleGreen.opacity(0.3))
             }
         }
         .frame(maxWidth: .infinity)
