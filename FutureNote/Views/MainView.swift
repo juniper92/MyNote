@@ -81,6 +81,7 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
+
 // MARK: - FUNCTION
 func getRect() -> CGRect {
     return UIScreen.main.bounds

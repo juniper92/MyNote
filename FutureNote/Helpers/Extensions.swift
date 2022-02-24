@@ -8,10 +8,10 @@
 import SwiftUI
 import UIKit 
 
+
+// MARK: - 커스텀컬러
 extension Color {
-    
     struct Palette {
-        
         static var Blue: Color {
             return Color("Blue")
         }
@@ -28,8 +28,8 @@ extension Color {
             return Color("Pink")
         }
         
-        static var Yellow: Color {
-            return Color("Yellow")
+        static var DarkGreen: Color {
+            return Color("DarkGreen")
         }
         
         static var TitleGreen: Color {
@@ -38,7 +38,7 @@ extension Color {
     }
 }
 
-// hexcolor - uicolor extension 
+// MARK: - hexcolor -> UIColor
 extension UIColor {
     convenience init(rgb: UInt) {
        self.init(
@@ -47,5 +47,17 @@ extension UIColor {
         blue: CGFloat(rgb & 0x0000FF) / 255.0,
         alpha: CGFloat(1.0)
        )
+    }
+}
+
+// MARK: - 뷰 스와이프
+extension UINavigationController {
+    open override func viewDidLoad() {
+        
+        // 먼저 viewDidLoad가 발생해야 하는 모든 일반항목 호출
+        super.viewDidLoad()
+        
+        // 기본적으로 NavigationView는 더 이상 popGestureRecognizer의 대리자가 아니며, 기본적으로 계속 사용 가능
+        interactivePopGestureRecognizer?.delegate = nil
     }
 }

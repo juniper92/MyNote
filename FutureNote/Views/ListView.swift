@@ -9,32 +9,45 @@ import SwiftUI
 
 struct ListView: View {
     
+    @State private var presentingSheet = false
     @Environment(\.colorScheme) var colorScheme
-    @State var items: [String] = [
-        "첫번째 리스트",
-        "두번째 리스트",
-        "세번째 리스트"
+    
+    @State var items: [ListModel] = [
+        ListModel(title: "첫번째 타이틀", isCompleted: false),
+        ListModel(title: "222222", isCompleted: true),
+        ListModel(title: "3번쨰애애애랭", isCompleted: false)
     ]
     
     var body: some View {
-        ZStack() {
+        
+        ZStack(alignment: .bottomTrailing) {
+            
             Color.Palette.Blue
                 .opacity(0.2)
                 .ignoresSafeArea(edges: .bottom)
             
+            
             List {
-                ForEach(items, id: \.self) { item in
-                    ListRowView(title: item)
-                        .listRowBackground(Color.Palette.Blue.opacity(0.2))
-                }
-                
-                Button {
-                    
-                } label: {
-                    PlusButton(colorScheme: colorScheme)
+                ForEach(items) { item in
+                    ListRowView(item: item)
                 }
             }
-            // 커스텀 네비바
+            
+            // 화살표 숨기기
+            //                ZStack {
+            //                    NavigationLink {
+            //                        AddListView()
+            //                    } label: {
+            //                        EmptyView()
+            //                    }
+            //                    .opacity(0.0)
+            //                    .buttonStyle(PlainButtonStyle())
+            //
+            //                    HStack {
+            //                        PlusButton(colorScheme: colorScheme)
+            //                    }
+            //                }
+            // MARK: - Custom NavBar
             .safeAreaInset(edge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
                     
@@ -47,7 +60,7 @@ struct ListView: View {
                         Button {
                             
                         } label: {
-//                            Image(systemName: "circle.grid.2x1.fill")
+                            // Image(systemName: "circle.grid.2x1.fill")
                             Text("편집")
                                 .font(.callout)
                         }
@@ -62,23 +75,26 @@ struct ListView: View {
                     LinearGradient(colors: [Color.Palette.Mint.opacity(0.3), Color.Palette.TitleGreen.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .overlay(.ultraThinMaterial))
             }
-            // 필수!
-            .navigationBarHidden(true)
+            .navigationBarHidden(true)  // 필수
             .tint(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
             
+            // MARK: - 글쓰기 버튼
+            Button {
+                presentingSheet = true
+            } label: {
+                Image(systemName: "plus.circle")
+                    .font(.system(size: 60).weight(.thin))
+                    .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
+                    .padding()
+                    .padding(.bottom)
+            }
+            .sheet(isPresented: $presentingSheet) {
+                AddListView()
+            }
         }
         
     }
 }
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ListView()
-        }
-    }
-}
-
 
 @ViewBuilder
 func PlusButton(colorScheme : ColorScheme) -> some View {
@@ -92,3 +108,19 @@ func PlusButton(colorScheme : ColorScheme) -> some View {
         Spacer()
     }
 }
+
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            ListView()
+                .preferredColorScheme(.dark)
+        }
+        
+        NavigationView {
+            ListView()
+                .preferredColorScheme(.light)
+        }
+    }
+}
+
+

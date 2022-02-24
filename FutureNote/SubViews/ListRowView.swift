@@ -9,22 +9,34 @@ import SwiftUI
 
 struct ListRowView: View {
     
-    let title: String 
+    @Environment(\.colorScheme) var colorScheme
+    let item: ListModel
     
     var body: some View {
-        HStack {
-            Image(systemName: "checkmark.circle")
-            Text(title)
+        HStack(spacing: 10) {
+            Image(systemName: item.isCompleted ? "checkmark.circle.fill" : "circle.dotted")
+                .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
+            Text(item.title)
+                .padding(.horizontal, 6)
             Spacer()
         }
-        .font(.custom("tway_air", size: 15))
-        .padding(.horizontal)
+        .font(.custom("tway_air", size: 16))
+        .padding(.horizontal, 3)
+        .padding(.vertical, 5)
         
     }
 }
 
 struct ListRowView_Previews: PreviewProvider {
+    
+    static var item1 = ListModel(title: "111111", isCompleted: false)
+    static var item2 = ListModel(title: "222222222", isCompleted: true)
+    
     static var previews: some View {
-        ListRowView(title: "첫번째 타이틀")
+        Group {
+            ListRowView(item: item1)
+            ListRowView(item: item2)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
