@@ -26,11 +26,12 @@ struct ListView: View {
                 .opacity(0.2)
                 .ignoresSafeArea(edges: .bottom)
             
-            
             List {
                 ForEach(items) { item in
                     ListRowView(item: item)
                 }
+                .onDelete(perform: deleteItem)
+                .onMove(perform: moveItem)
             }
             
             // 화살표 숨기기
@@ -93,6 +94,16 @@ struct ListView: View {
             }
         }
         
+    }
+    
+    
+    // MARK: - FUNCTIONS
+    func deleteItem(indexSet: IndexSet) {
+        items.remove(atOffsets: indexSet)
+    }
+    
+    func moveItem(from: IndexSet, to: Int) {
+        items.move(fromOffsets: from, toOffset: to)
     }
 }
 

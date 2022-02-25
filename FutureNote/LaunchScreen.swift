@@ -21,7 +21,7 @@ struct LaunchScreen: View {
                 ZStack {
                     VStack(spacing: 30) {
                         
-                        Text("액션\n노트")
+                        Text("퓨쳐\n노트")
                             .font(.custom("tway_air", size: 80))
                             .foregroundColor(Color.Palette.TitleGreen)
                     }

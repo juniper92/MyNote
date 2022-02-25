@@ -15,6 +15,7 @@
 		0745AD2227C7185B00985F4F /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2127C7185B00985F4F /* AddListView.swift */; };
 		0745AD2427C7649900985F4F /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2327C7649900985F4F /* ListModel.swift */; };
 		0745AD2627C782D100985F4F /* MLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2527C782D100985F4F /* MLTextField.swift */; };
+		0751489727C88434006D309F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751489627C88434006D309F /* ListViewModel.swift */; };
 		076524D727BDCC130069B7DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D627BDCC130069B7DD /* Extensions.swift */; };
 		076524D927BDDF8A0069B7DD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D827BDDF8A0069B7DD /* MainView.swift */; };
 		076524DC27BDE3C60069B7DD /* WishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DB27BDE3C60069B7DD /* WishView.swift */; };
@@ -33,6 +34,7 @@
 		0745AD2127C7185B00985F4F /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		0745AD2327C7649900985F4F /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		0745AD2527C782D100985F4F /* MLTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextField.swift; sourceTree = "<group>"; };
+		0751489627C88434006D309F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		076524D627BDCC130069B7DD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		076524D827BDDF8A0069B7DD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		076524DB27BDE3C60069B7DD /* WishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishView.swift; sourceTree = "<group>"; };
@@ -79,9 +81,9 @@
 				07239F9427BCF8DD0080AFE3 /* ContentView.swift */,
 				076524D527BDCC050069B7DD /* Helpers */,
 				07E7130727BF39B800AAE2C1 /* Model */,
+				07E7130827BF39BD00AAE2C1 /* ViewModel */,
 				076524DA27BDE3B90069B7DD /* Views */,
 				072F579327BF7F560047D448 /* SubViews */,
-				07E7130827BF39BD00AAE2C1 /* ViewModel */,
 				07239F9627BCF8DD0080AFE3 /* Assets.xcassets */,
 				07239F9827BCF8DD0080AFE3 /* Preview Content */,
 			);
@@ -143,6 +145,7 @@
 		07E7130827BF39BD00AAE2C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0751489627C88434006D309F /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				076524E027BDE84F0069B7DD /* LaunchScreen.swift in Sources */,
 				076524DC27BDE3C60069B7DD /* WishView.swift in Sources */,
+				0751489727C88434006D309F /* ListViewModel.swift in Sources */,
 				07239F9527BCF8DD0080AFE3 /* ContentView.swift in Sources */,
 				0745AD2627C782D100985F4F /* MLTextField.swift in Sources */,
 				076524DE27BDE3CB0069B7DD /* ListView.swift in Sources */,
@@ -363,7 +367,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutureNote/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "액션노트";
+				INFOPLIST_KEY_CFBundleDisplayName = "퓨쳐노트";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -395,7 +399,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutureNote/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "액션노트";
+				INFOPLIST_KEY_CFBundleDisplayName = "퓨쳐노트";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

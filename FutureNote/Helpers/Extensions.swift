@@ -53,10 +53,8 @@ extension UIColor {
 // MARK: - 뷰 스와이프
 extension UINavigationController {
     open override func viewDidLoad() {
-        
         // 먼저 viewDidLoad가 발생해야 하는 모든 일반항목 호출
         super.viewDidLoad()
-        
         // 기본적으로 NavigationView는 더 이상 popGestureRecognizer의 대리자가 아니며, 기본적으로 계속 사용 가능
         interactivePopGestureRecognizer?.delegate = nil
     }
