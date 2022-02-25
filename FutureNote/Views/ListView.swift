@@ -33,21 +33,6 @@ struct ListView: View {
                 .onDelete(perform: deleteItem)
                 .onMove(perform: moveItem)
             }
-            
-            // 화살표 숨기기
-            //                ZStack {
-            //                    NavigationLink {
-            //                        AddListView()
-            //                    } label: {
-            //                        EmptyView()
-            //                    }
-            //                    .opacity(0.0)
-            //                    .buttonStyle(PlainButtonStyle())
-            //
-            //                    HStack {
-            //                        PlusButton(colorScheme: colorScheme)
-            //                    }
-            //                }
             // MARK: - Custom NavBar
             .safeAreaInset(edge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
