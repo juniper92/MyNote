@@ -11,7 +11,7 @@ struct ListView: View {
     
     @State private var presentingSheet = false
     @Environment(\.colorScheme) var colorScheme
-    
+        
     @State var items: [ListModel] = [
         ListModel(title: "첫번째 타이틀", isCompleted: false),
         ListModel(title: "222222", isCompleted: true),
@@ -59,7 +59,7 @@ struct ListView: View {
                         Spacer()
                         
                         Button {
-                            
+                            // MARK: - EditButton기능 삽입
                         } label: {
                             // Image(systemName: "circle.grid.2x1.fill")
                             Text("편집")

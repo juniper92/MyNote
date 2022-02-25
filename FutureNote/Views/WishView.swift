@@ -17,6 +17,7 @@ struct WishView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             WishView()
+                .preferredColorScheme(.dark)
         }
     }
 }
