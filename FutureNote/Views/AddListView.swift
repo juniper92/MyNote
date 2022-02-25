@@ -23,7 +23,7 @@ struct AddListView: View {
                     
                     Rectangle()
                         .overlay(
-                            TextField("여기에 오늘의 목표를 입력하세요!", text: $textFieldText)
+                            TextField("여기에 입력하세요...", text: $textFieldText)
                                 .font(.custom("tway_air", size: 16))
                                 .frame(height: getRect().height / 5)
                                 .foregroundColor(.primary.opacity(0.7))
@@ -37,16 +37,18 @@ struct AddListView: View {
                         
                     } label: {
                         Text("저장하기")
-                            .font(.headline.bold())
+                            .font(.system(size: 18).bold())
                             .foregroundColor(colorScheme == .dark ? .white.opacity(0.5) : Color.Palette.TitleGreen)
+                            .frame(maxWidth: .infinity)
                             .padding()
+                            
                     }
                     
                 }
                 .frame(height: getRect().height / 4)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(colorScheme == .dark ? Color.Palette.TitleGreen.opacity(0.06) : Color.Palette.LightGreen.opacity(0.2))
-                .background(colorScheme == .dark ? Color.Palette.TitleGreen.opacity(0.1) : Color.Palette.LightGreen.opacity(0.2))
+                .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen.opacity(0.2) : Color.Palette.LightGreen.opacity(0.2))
+                .background(colorScheme == .dark ? Color.Palette.LightGreen.opacity(0.7) : Color.Palette.LightGreen.opacity(0.2))
                 .cornerRadius(14)
                 .padding()
             }
