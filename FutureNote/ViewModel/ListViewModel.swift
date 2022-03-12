@@ -34,6 +34,19 @@ class ListViewModel: ObservableObject {
     func moveItem(from: IndexSet, to: Int) {
         items.move(fromOffsets: from, toOffset: to)
     }
+    
+    func addItem(title: String) {
+        let newItem = ListModel(title: title, isCompleted: false)
+        items.append(newItem)
+    }
+    
+    func updateItem(item: ListModel) {
+        if let index = items.firstIndex(where: { (existingItem) -> Bool in
+            return existingItem.id == item.id
+        }) {
+            items[index] = ListModel(title: item.title, isCompleted: !item.isCompleted)
+        }
+    }
 }
 
 

@@ -14,6 +14,11 @@ enum Tab: String, CaseIterable {
 
 struct MainView: View {
     
+    // 2번째 탭 전체에서 사용될 예정이므로, 이곳에 생성
+    // 이 객체를 관찰하고 싶다면, 만약 이 객체가 바뀌면, 뷰가 실제로 업데이트될것이다. 여기에 속성래퍼 추가해야 함
+    // class에는 @StateObject
+    @StateObject var listViewMode: ListViewModel = ListViewModel()
+    
     @Environment(\.colorScheme) var colorScheme
     @State var currentTab: Tab = .Card
     
@@ -36,6 +41,8 @@ struct MainView: View {
                     ListView()
                 }
                 .tag(Tab.Notes)
+                .environmentObject(ListViewModel())
+
             }
             
             // 탭바

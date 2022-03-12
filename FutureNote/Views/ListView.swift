@@ -12,12 +12,8 @@ struct ListView: View {
     @State private var presentingSheet = false
     @Environment(\.colorScheme) var colorScheme
         
-    @State var items: [ListModel] = [
-        ListModel(title: "첫번째 타이틀", isCompleted: false),
-        ListModel(title: "222222", isCompleted: true),
-        ListModel(title: "3번쨰애애애랭", isCompleted: false)
-    ]
-    
+    @EnvironmentObject var listViewModel: ListViewModel
+  
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
@@ -27,11 +23,16 @@ struct ListView: View {
                 .ignoresSafeArea(edges: .bottom)
             
             List {
-                ForEach(items) { item in
+                ForEach(listViewModel.items) { item in
                     ListRowView(item: item)
+                        .onTapGesture {
+                            withAnimation(.linear) {
+                                
+                            }
+                        }
                 }
-                .onDelete(perform: deleteItem)
-                .onMove(perform: moveItem)
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
             }
             // MARK: - Custom NavBar
             .safeAreaInset(edge: .top) {
@@ -44,7 +45,7 @@ struct ListView: View {
                         Spacer()
                         
                         Button {
-                            // MARK: - EditButton기능 삽입
+//                             MARK: - EditButton기능 삽입
                         } label: {
                             // Image(systemName: "circle.grid.2x1.fill")
                             Text("편집")
@@ -81,15 +82,6 @@ struct ListView: View {
         
     }
     
-    
-    // MARK: - FUNCTIONS
-    func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
-    }
-    
-    func moveItem(from: IndexSet, to: Int) {
-        items.move(fromOffsets: from, toOffset: to)
-    }
 }
 
 @ViewBuilder
@@ -111,11 +103,8 @@ struct ListView_Previews: PreviewProvider {
             ListView()
                 .preferredColorScheme(.dark)
         }
-        
-        NavigationView {
-            ListView()
-                .preferredColorScheme(.light)
-        }
+        .environmentObject(ListViewModel())
+
     }
 }
 
