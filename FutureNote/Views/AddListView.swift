@@ -9,11 +9,11 @@ import SwiftUI
 
 struct AddListView: View {
     
+    @EnvironmentObject var listViewModel: ListViewModel
+    
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) var colorScheme
     @State var textFieldText: String = ""
-    
-    @EnvironmentObject var listViewModel: ListViewModel
     
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
@@ -50,8 +50,8 @@ struct AddListView: View {
                 }
                 .frame(height: getRect().height / 4)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(colorScheme == .dark ? Color.Palette.Blue.opacity(0.2) : Color.Palette.LightGreen.opacity(0.2))
-                .background(colorScheme == .dark ? Color.Palette.Blue.opacity(0.3) : Color.Palette.LightGreen.opacity(0.2))
+                .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen.opacity(0.2) : Color.Palette.LightGreen.opacity(0.2))
+                .background(colorScheme == .dark ? Color.Palette.DarkGreen.opacity(0.3) : Color.Palette.LightGreen.opacity(0.2))
                 .cornerRadius(14)
                 .padding()
             }

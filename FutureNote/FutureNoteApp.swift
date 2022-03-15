@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct FutureNoteApp: App {
-    
+        
     var body: some Scene {
         WindowGroup {
             LaunchScreen()
