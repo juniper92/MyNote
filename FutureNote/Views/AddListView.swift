@@ -50,8 +50,8 @@ struct AddListView: View {
                 }
                 .frame(height: getRect().height / 4)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen.opacity(0.2) : Color.Palette.LightGreen.opacity(0.2))
-                .background(colorScheme == .dark ? Color.Palette.DarkGreen.opacity(0.3) : Color.Palette.LightGreen.opacity(0.2))
+                .foregroundColor(colorScheme == .dark ? Color.Palette.DarkGreen.opacity(0.3) : Color.Palette.LightGreen.opacity(0.2))
+                .background(colorScheme == .dark ? Color.Palette.TitleGreen.opacity(0.3) : Color.Palette.LightGreen.opacity(0.2))
                 .cornerRadius(14)
                 .padding()
             }
