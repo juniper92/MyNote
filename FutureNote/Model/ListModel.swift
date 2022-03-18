@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListModel: Identifiable {
+struct ListModel: Identifiable, Codable {
     let id: String
     let title: String
     let isCompleted: Bool

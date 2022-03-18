@@ -11,9 +11,12 @@ struct ListView: View {
     
     @State private var presentingSheet = false
     @Environment(\.colorScheme) var colorScheme
-        
+    
     @EnvironmentObject var listViewModel: ListViewModel
-  
+    
+    @State var isEditing = false
+    @State var addButtonDisabled = false
+    
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
@@ -34,10 +37,12 @@ struct ListView: View {
                 .onDelete(perform: listViewModel.deleteItem)
                 .onMove(perform: listViewModel.moveItem)
             }
+            .toolbar(content: {
+                EditButton()
+            })
             // MARK: - Custom NavBar
             .safeAreaInset(edge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
-                    
                     HStack {
                         Text("✍🏻 오늘 할 일")
                             .font(.custom("tway_air", size: 27))
@@ -45,55 +50,53 @@ struct ListView: View {
                         Spacer()
                         
                         Button {
-//                             MARK: - EditButton기능 삽입
+                            self.isEditing.toggle()
+                            self.addButtonDisabled.toggle()
                         } label: {
-                            // Image(systemName: "circle.grid.2x1.fill")
-                            Text("편집")
-                                .font(.callout)
+                            if self.isEditing {
+                                Text("완료")
+                                    .font(.callout)
+                            } else {
+                                listViewModel.items.isEmpty ? Text("") : Text("편집").font(.callout)
+                            }
                         }
                     }
                     
                     Text("입력한 리스트는 자정이 지나면 사라져요.\n오늘 하루가 지나기 전에 목표한 일들을 마무리해봐요!")
                         .font(.caption)
-                    
                 }
                 .padding()
                 .background(
                     LinearGradient(colors: [Color.Palette.Mint.opacity(0.3), Color.Palette.TitleGreen.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .overlay(.ultraThinMaterial))
             }
-            .navigationBarHidden(true)  // 필수
+            .navigationBarHidden(true)
             .tint(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
             
             // MARK: - 글쓰기 버튼
             Button {
                 presentingSheet = true
             } label: {
-                Image(systemName: "plus.circle")
-                    .font(.system(size: 60).weight(.thin))
-                    .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
-                    .padding()
-                    .padding(.bottom)
+                if !addButtonDisabled {
+                    PlusButton(colorScheme: colorScheme)
+                }
             }
             .sheet(isPresented: $presentingSheet) {
                 AddListView()
             }
+            .disabled(addButtonDisabled)
         }
-        
     }
-    
 }
 
 @ViewBuilder
 func PlusButton(colorScheme : ColorScheme) -> some View {
     HStack {
-        Spacer()
-        
-        Image(systemName: "plus")
-            .font(.largeTitle.weight(.semibold))
+        Image(systemName: "plus.circle")
+            .font(.system(size: 60).weight(.thin))
             .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
-        
-        Spacer()
+            .padding()
+            .padding(.bottom)
     }
 }
 
@@ -104,7 +107,7 @@ struct ListView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(ListViewModel())
-
+        
     }
 }
 

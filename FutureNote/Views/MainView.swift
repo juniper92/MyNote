@@ -21,7 +21,7 @@ struct MainView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var currentTab: Tab = .Card
-    
+        
     // 디폴트탭바 숨겨!!!
     init() {
         UITabBar.appearance().isHidden = true
