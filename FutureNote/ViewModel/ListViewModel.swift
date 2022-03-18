@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-// EnvironmentObject로 만들 예정 
 class ListViewModel: ObservableObject {
     
     @Published var items: [ListModel] = []
@@ -41,10 +39,8 @@ class ListViewModel: ObservableObject {
     }
     
     func updateItem(item: ListModel) {
-        if let index = items.firstIndex(where: { (existingItem) -> Bool in
-            return existingItem.id == item.id
-        }) {
-            items[index] = ListModel(title: item.title, isCompleted: !item.isCompleted)
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            items[index] = item.updateCompletion()
         }
     }
 }

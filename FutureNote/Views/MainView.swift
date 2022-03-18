@@ -84,7 +84,7 @@ struct MainView_Previews: PreviewProvider {
         MainView()
             .preferredColorScheme(.dark)
         
-        MainView()
+//        MainView()
     }
 }
 
