@@ -11,11 +11,9 @@ struct ListView: View {
     
     @State private var presentingSheet = false
     @Environment(\.colorScheme) var colorScheme
+    @State var animate: Bool = false
     
     @EnvironmentObject var listViewModel: ListViewModel
-    
-    @State var isEditing = false
-    @State var addButtonDisabled = false
     
     var body: some View {
         
@@ -35,11 +33,8 @@ struct ListView: View {
                         }
                 }
                 .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
             }
-            .toolbar(content: {
-                EditButton()
-            })
+            
             // MARK: - Custom NavBar
             .safeAreaInset(edge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -50,19 +45,13 @@ struct ListView: View {
                         Spacer()
                         
                         Button {
-                            self.isEditing.toggle()
-                            self.addButtonDisabled.toggle()
+                            listViewModel.deleteAllItems()
                         } label: {
-                            if self.isEditing {
-                                Text("완료")
-                                    .font(.callout)
-                            } else {
-                                listViewModel.items.isEmpty ? Text("") : Text("편집").font(.callout)
-                            }
+                            listViewModel.items.isEmpty ? Text("") : Text("모두삭제").font(.callout)
                         }
                     }
                     
-                    Text("입력한 리스트는 자정이 지나면 사라져요.\n오늘 하루가 지나기 전에 목표한 일들을 마무리해봐요!")
+                    Text("오늘 할 일을 이곳에 입력해요.\n그리고 오늘이 지나기 전에 모두 마무리해요!")
                         .font(.caption)
                 }
                 .padding()
@@ -77,24 +66,37 @@ struct ListView: View {
             Button {
                 presentingSheet = true
             } label: {
-                if !addButtonDisabled {
-                    PlusButton(colorScheme: colorScheme)
-                }
+                PlusButton(colorScheme: colorScheme, animate: animate)
             }
+            .onAppear (perform: addAnimation)
             .sheet(isPresented: $presentingSheet) {
                 AddListView()
             }
-            .disabled(addButtonDisabled)
+        }
+    }
+    
+    func addAnimation() {
+        guard !animate else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            withAnimation(
+                Animation
+                    .easeInOut(duration: 1.5)
+                    .repeatForever()
+            ) {
+                animate.toggle()
+            }
         }
     }
 }
 
+
 @ViewBuilder
-func PlusButton(colorScheme : ColorScheme) -> some View {
+func PlusButton(colorScheme : ColorScheme, animate : Bool) -> some View {
     HStack {
         Image(systemName: "plus.circle")
             .font(.system(size: 60).weight(.thin))
             .foregroundColor(colorScheme == .dark ? Color.Palette.LightGreen : Color.Palette.TitleGreen)
+            .scaleEffect(animate ? 1.3 : 1)
             .padding()
             .padding(.bottom)
     }

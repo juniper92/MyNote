@@ -41,7 +41,7 @@ struct AddListView: View {
                         saveButtonPressed()
                     } label: {
                         Text("저장하기")
-                            .font(.system(size: 18).bold())
+                            .font(.system(size: 17).bold())
                             .foregroundColor(colorScheme == .dark ? .white.opacity(0.5) : Color.Palette.TitleGreen)
                             .frame(maxWidth: .infinity)
                             .padding()
