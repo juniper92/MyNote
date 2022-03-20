@@ -12,11 +12,9 @@
 		07239F9727BCF8DD0080AFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07239F9627BCF8DD0080AFE3 /* Assets.xcassets */; };
 		07239F9A27BCF8DD0080AFE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07239F9927BCF8DD0080AFE3 /* Preview Assets.xcassets */; };
 		072F579527BF7F620047D448 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072F579427BF7F620047D448 /* ListRowView.swift */; };
-		073171A627C8F14B009FA476 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073171A527C8F14B009FA476 /* NavigationTitleView.swift */; };
 		073171A827C8F65D009FA476 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073171A727C8F65D009FA476 /* CardView.swift */; };
 		0745AD2227C7185B00985F4F /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2127C7185B00985F4F /* AddListView.swift */; };
 		0745AD2427C7649900985F4F /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2327C7649900985F4F /* ListModel.swift */; };
-		0745AD2627C782D100985F4F /* MLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745AD2527C782D100985F4F /* MLTextField.swift */; };
 		0751489727C88434006D309F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751489627C88434006D309F /* ListViewModel.swift */; };
 		076524D727BDCC130069B7DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D627BDCC130069B7DD /* Extensions.swift */; };
 		076524D927BDDF8A0069B7DD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524D827BDDF8A0069B7DD /* MainView.swift */; };
@@ -24,7 +22,6 @@
 		076524DE27BDE3CB0069B7DD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DD27BDE3CB0069B7DD /* ListView.swift */; };
 		076524E027BDE84F0069B7DD /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076524DF27BDE84F0069B7DD /* LaunchScreen.swift */; };
 		076524E327BE2E4C0069B7DD /* tway_air.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076524E227BE2E4C0069B7DD /* tway_air.ttf */; };
-		2111B05627E5AD7900A8FA5F /* NoListItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2111B05527E5AD7900A8FA5F /* NoListItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,11 +31,9 @@
 		07239F9627BCF8DD0080AFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07239F9927BCF8DD0080AFE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		072F579427BF7F620047D448 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
-		073171A527C8F14B009FA476 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		073171A727C8F65D009FA476 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0745AD2127C7185B00985F4F /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		0745AD2327C7649900985F4F /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
-		0745AD2527C782D100985F4F /* MLTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextField.swift; sourceTree = "<group>"; };
 		0751489627C88434006D309F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		076524D627BDCC130069B7DD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		076524D827BDDF8A0069B7DD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -47,7 +42,6 @@
 		076524DF27BDE84F0069B7DD /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		076524E227BE2E4C0069B7DD /* tway_air.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tway_air.ttf; sourceTree = "<group>"; };
 		076524E427BE2E6C0069B7DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2111B05527E5AD7900A8FA5F /* NoListItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +103,6 @@
 			children = (
 				072F579427BF7F620047D448 /* ListRowView.swift */,
 				073171A727C8F65D009FA476 /* CardView.swift */,
-				0745AD2527C782D100985F4F /* MLTextField.swift */,
-				073171A527C8F14B009FA476 /* NavigationTitleView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -130,7 +122,6 @@
 				076524DB27BDE3C60069B7DD /* WishView.swift */,
 				076524DD27BDE3CB0069B7DD /* ListView.swift */,
 				0745AD2127C7185B00985F4F /* AddListView.swift */,
-				2111B05527E5AD7900A8FA5F /* NoListItemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,9 +226,6 @@
 				076524DC27BDE3C60069B7DD /* WishView.swift in Sources */,
 				0751489727C88434006D309F /* ListViewModel.swift in Sources */,
 				07239F9527BCF8DD0080AFE3 /* ContentView.swift in Sources */,
-				0745AD2627C782D100985F4F /* MLTextField.swift in Sources */,
-				2111B05627E5AD7900A8FA5F /* NoListItemsView.swift in Sources */,
-				073171A627C8F14B009FA476 /* NavigationTitleView.swift in Sources */,
 				076524DE27BDE3CB0069B7DD /* ListView.swift in Sources */,
 				076524D927BDDF8A0069B7DD /* MainView.swift in Sources */,
 				0745AD2227C7185B00985F4F /* AddListView.swift in Sources */,
