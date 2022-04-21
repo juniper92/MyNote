@@ -21,7 +21,7 @@ struct MainView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var currentTab: Tab = .Card
-        
+    
     // 디폴트탭바 숨겨!!!
     init() {
         UITabBar.appearance().isHidden = true
@@ -42,7 +42,7 @@ struct MainView: View {
                 }
                 .tag(Tab.Notes)
                 .environmentObject(listViewModel)
-
+                
             }
             
             // 탭바
@@ -83,8 +83,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .preferredColorScheme(.dark)
-        
-//        MainView()
     }
 }
 
