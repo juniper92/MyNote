@@ -31,7 +31,7 @@ struct VerificationView: View {
     }
     
     
-    // MARK: - Conditions For custom otp field & limiting only one text
+    // MARK: - 텍스트 1개만 지정
     func OTPCondition(value: [String]) {
         for index in 0..<6 {
             if value[index].count > 1 {
